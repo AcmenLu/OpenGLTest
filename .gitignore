@@ -1,2 +1,7 @@
 
 OpenGLTest/
+*.exe
+*.ilk
+*.pdb
+*.opensdf
+*.sdf
