@@ -4,3 +4,9 @@
 *.pdb
 *.opensdf
 *.sdf
+*.tlog
+*.idb
+*.obj
+OpenGLTest/Debug/OpenGLTest.lastbuildstate
+*.suo
+*.log
