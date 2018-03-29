@@ -71,7 +71,13 @@
 //
 //void Render( )
 //{
+//	glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
+//	glClear( GL_COLOR_BUFFER_BIT );
+//	float timeValue = glfwGetTime( );
+//	float greenValue = ( sin( timeValue) / 2.0f ) + 0.5f;
+//	int verLocation = glGetUniformLocation( shaderProgram, "ourColor" );
 //	glUseProgram( shaderProgram );
+//	glUniform4f( verLocation, 1.0f, greenValue, 1.0f, 1.0f );
 //	glBindVertexArray( VAO );
 //	glDrawElements( GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0 );
 //	glBindVertexArray( 0 );
@@ -105,7 +111,7 @@
 //	char* vertexShaderSource = "#version 330 core \n"
 //		"layout (location = 0) in vec3 aPos;\n"
 //		"void main()\n"
-//		"{ gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0); }";
+//		"{ gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);}";
 //	unsigned int vertexShader;
 //	vertexShader = glCreateShader( GL_VERTEX_SHADER );
 //	glShaderSource( vertexShader, 1, &vertexShaderSource, NULL );
@@ -123,8 +129,9 @@
 //	// Create fragment shader
 //	char* fragmentShaderSource = "#version 330 core\n"
 //	"out vec4 FragColor;\n"
+//	"uniform vec4 ourColor;\n"
 //	"void main()\n"
-//	"{ FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f); }";
+//	"{ FragColor = ourColor;}";
 //
 //	unsigned int fragmentShader;
 //	fragmentShader = glCreateShader( GL_FRAGMENT_SHADER );

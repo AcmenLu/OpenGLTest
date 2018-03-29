@@ -70,7 +70,14 @@
     <ClCompile Include="..\Source\glad.c" />
     <ClCompile Include="HelloOpenGL.cpp" />
     <ClCompile Include="RectangleSample.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderSample-uniform.cpp" />
+    <ClCompile Include="ShaderSample.cpp" />
+    <ClCompile Include="TextureSample.cpp" />
     <ClCompile Include="TriangleSample.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
