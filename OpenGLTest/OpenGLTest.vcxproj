@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClCompile Include="..\Source\glad.c" />
     <ClCompile Include="HelloOpenGL.cpp" />
+    <ClCompile Include="PermSample.cpp" />
     <ClCompile Include="RectangleSample.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderSample-uniform.cpp" />
@@ -77,6 +78,7 @@
     <ClCompile Include="TriangleSample.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Source\stb_image.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

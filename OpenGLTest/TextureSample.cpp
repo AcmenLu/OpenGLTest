@@ -3,6 +3,9 @@
 #include <iostream>
 #include "Shader.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 const GLuint WIDTH = 800, HEIGHT = 600;
 GLFWwindow* window = nullptr;
 bool InitOpenGL( );
