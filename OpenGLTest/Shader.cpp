@@ -97,3 +97,10 @@ void Shader::SetFloat( const std::string &name, float value )
 	if ( location > 0 )
 		glUniform1i( location, value );
 }
+
+void Shader::SetMatrix4(const std::string &name, float* value, bool transpose )
+{
+	unsigned int location = glGetUniformLocation( mShaderProgram, name.c_str( ) );
+	if (location > 0)
+		glUniformMatrix4fv( location, 1, transpose, value );
+}
