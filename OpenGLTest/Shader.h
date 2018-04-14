@@ -14,7 +14,7 @@ public:
 	unsigned int mShaderProgram;
 
 	Shader( const GLchar* vertexPath, const GLchar* fragmentPath );
-	~Shader();
+	inline ~Shader(){};
 
 	void Use( );
 	void SetBool( const std::string &name, bool value );

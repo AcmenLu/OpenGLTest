@@ -69,6 +69,8 @@
   <ItemGroup>
     <ClCompile Include="..\Source\glad.c" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="coordinateSample.cpp" />
+    <ClCompile Include="CubeSample.cpp" />
     <ClCompile Include="TransformSample.cpp" />
     <ClCompile Include="HelloOpenGL.cpp" />
     <ClCompile Include="PermSample.cpp" />
@@ -78,6 +80,7 @@
     <ClCompile Include="ShaderSample.cpp" />
     <ClCompile Include="TextureSample.cpp" />
     <ClCompile Include="TriangleSample.cpp" />
+    <ClCompile Include="transform2Sample.cpp" />
     <ClCompile Include="WVPSample.cpp" />
   </ItemGroup>
   <ItemGroup>

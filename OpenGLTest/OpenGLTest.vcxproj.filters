@@ -51,6 +51,15 @@
     <ClCompile Include="Camera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="transform2Sample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="coordinateSample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeSample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="WVPSample.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
