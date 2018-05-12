@@ -16,9 +16,14 @@
 #include "GLFW/glfw3.h"
 
 
-#include "Shader.h"
-#include "Mesh.h"
-#include "Texture.h"
 #include "Camera.h"
+
+#include "Shader.h"
+
+#include "Texture.h"
+
+#include "Mesh.h"
+#include "Model.h"
+
 
 

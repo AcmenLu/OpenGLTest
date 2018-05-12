@@ -15,9 +15,25 @@ void LoadMesh( const char* filename )
 
 void Mesh::Draw( Shader* shader )
 {
+	unsigned int diffuseNr = 1;
+	unsigned int specularNr = 1;
+	unsigned int normalNr   = 1;
+	unsigned int heightNr   = 1;
 	for ( unsigned int index = 0; index < mTextures.size( ); index++ )
 	{
 		glActiveTexture( GL_TEXTURE0 + index );
+		std::string number;
+		std::string name = mTextures[index].Type;
+		if ( mTextures[index].Type == "texture_diffuse" )
+			number = std::to_string( diffuseNr++ );
+		else if( name == "texture_specular" )
+			number = std::to_string( specularNr++ );
+		else if( name == "texture_normal" )
+			number = std::to_string( normalNr++ );
+		else if( name == "texture_height" )
+			number = std::to_string( heightNr++ );
+
+		shader->SetInt( ( name + number ).c_str( ), index );
 		glBindTexture( GL_TEXTURE_2D, mTextures[index].Identity );
 	}
 	
