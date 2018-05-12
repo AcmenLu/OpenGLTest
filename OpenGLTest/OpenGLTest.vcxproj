@@ -68,9 +68,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\glad.c" />
-    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="AmbientLighrSample.cpp" />
+    <ClCompile Include="CameraSample.cpp" />
+    <ClCompile Include="ColorSample.cpp" />
     <ClCompile Include="coordinateSample.cpp" />
     <ClCompile Include="CubeSample.cpp" />
+    <ClCompile Include="DiffuseLightSample.cpp" />
+    <ClCompile Include="LightSample.cpp" />
+    <ClCompile Include="MaterialSample.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Sampler2DSample.cpp" />
+    <ClCompile Include="SpecularLightSample.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TransformSample.cpp" />
     <ClCompile Include="HelloOpenGL.cpp" />
     <ClCompile Include="PermSample.cpp" />
@@ -86,7 +95,10 @@
   <ItemGroup>
     <ClInclude Include="..\Source\stb_image.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Sample.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

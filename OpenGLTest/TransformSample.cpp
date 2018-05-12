@@ -124,7 +124,7 @@
 //	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, EBO );
 //	glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof( indices ), indices, GL_STATIC_DRAW );
 //
-//	shader = new Shader( "./Shader/transformsample.vs", "./Shader/transformsample.fs" );
+//	shader = new Shader( "./Shader/Start/transformsample.vs", "./Shader/Start/transformsample.fs" );
 //
 //	glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof( float ), (void*)0 );
 //	glEnableVertexAttribArray( 0 );

@@ -115,7 +115,7 @@
 //	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, EBO );
 //	glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof( indices ), indices, GL_STATIC_DRAW );
 //
-//	shader = new Shader( "./Shader/texturesample_vs.txt", "./Shader/texturesample_fs.txt" );
+//	shader = new Shader( "./Shader/Start/texturesample_vs.txt", "./Shader/Start/texturesample_fs.txt" );
 //
 //	glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof( float ), (void*)0 );
 //	glEnableVertexAttribArray( 0 );

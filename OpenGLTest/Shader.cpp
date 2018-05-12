@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-Shader::Shader( const GLchar* vertexPath, const GLchar* fragmentPath )
+Shader::Shader( const char* vertexPath, const char* fragmentPath )
 {
 	std::string vertexCode;
 	std::string fragmentCode;
@@ -95,10 +95,24 @@ void Shader::SetFloat( const std::string &name, float value )
 {
 	int location = glGetUniformLocation( mShaderProgram, name.c_str( ) );
 	if ( location > 0 )
-		glUniform1i( location, value );
+		glUniform1f( location, value );
 }
 
-void Shader::SetMatrix4(const std::string &name, float* value, bool transpose )
+void Shader::SetVector3( const std::string &name, float x, float y, float z )
+{
+	int location = glGetUniformLocation( mShaderProgram, name.c_str( ) );
+	if ( location >= 0 )
+		glUniform3f( location, x, y, z );
+}
+
+void Shader::SetVector3( const std::string &name, glm::vec3 vec )
+{
+	int location = glGetUniformLocation( mShaderProgram, name.c_str( ) );
+	if ( location >= 0 )
+		glUniform3f( location, vec.x, vec.y, vec.z );
+}
+
+void Shader::SetMatrix4( const std::string &name, float* value, bool transpose )
 {
 	int location = glGetUniformLocation( mShaderProgram, name.c_str( ) );
 	if ( location >= 0 )
