@@ -8,9 +8,9 @@ class Camera
 {
 
 public:
-	Vector3 mPosition;
-	Vector3 mTarget;
-	Vector3 mUp;
+	glm::vec3 mPosition;
+	glm::vec3 mTarget;
+	glm::vec3 mUp;
 
 	inline Camera( ): mPosition( 0.0f, 0.0f, 30.0f ), mTarget( 0.0f, 0.0f, 0.0f ), mUp( 0.0f, 1.0f, 0.0f )
 		{ }
@@ -18,22 +18,22 @@ public:
 	inline ~Camera( )
 		{ };
 
-	inline Vector3 Right( )
-		{ return Vector3::Cross( mTarget - mPosition, mUp ).Normalize( ); }
+	inline glm::vec3 Right( )
+		{ return glm::normalize( glm::cross( mTarget - mPosition, mUp ) ); }
 
-	inline Vector3 Front( )
-		{ return ( mTarget - mPosition ).Normalize( ); }
+	inline glm::vec3 Front( )
+		{ return glm::normalize( mTarget - mPosition ); }
 
-	inline Matrix4 GetMatrix( )
-		{ return Matrix4::CreateLookAtRH( mPosition, mTarget, mUp ); }
+	inline glm::mat4 GetMatrix( )
+		{ return glm::lookAtRH( mPosition, mTarget, mUp ); }
 
-	inline void SetPostition( Vector3 position )
+	inline void SetPostition( glm::vec3 position )
 		{ mPosition = position; }
 
-	inline void SetTarget( Vector3 target )
+	inline void SetTarget( glm::vec3 target )
 		{ mTarget = target; }
 
-	inline void SetUp( Vector3 up )
+	inline void SetUp( glm::vec3 up )
 		{ mUp = up; }
 };
 

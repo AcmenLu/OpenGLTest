@@ -10,3 +10,6 @@
 OpenGLTest/Debug/OpenGLTest.lastbuildstate
 *.suo
 *.log
+*.opendb
+*.db
+Library/*.lib

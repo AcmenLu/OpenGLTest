@@ -1,4 +1,3 @@
-
 #pragma once
 
 namespace Acmen
@@ -8,7 +7,7 @@ class Camera
 {
 
 public:
-	Vector3 mPosition;
+	glm::vec4 mPosition;
 	Vector3 mTarget;
 	Vector3 mUp;
 
@@ -24,8 +23,8 @@ public:
 	inline Vector3 Front( )
 		{ return ( mTarget - mPosition ).Normalize( ); }
 
-	inline Matrix4 GetMatrix( )
-		{ return Matrix4::CreateLookAtRH( mPosition, mTarget, mUp ); }
+	inline glm::mat4 GetMatrix( )
+		{ return glm::mat4::CreateLookAtRH( mPosition, mTarget, mUp ); }
 
 	inline void SetPostition( Vector3 position )
 		{ mPosition = position; }

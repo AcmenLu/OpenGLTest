@@ -8,9 +8,9 @@ public:
 	typedef _void (*OnIdle)( const _dword elapse );
 	typedef _void (*OnKeyDown)( const _dword keyCode );
 	typedef _void (*OnKeyUp)( const _dword keyCode );
-	typedef _void (*OnMouseDown)( const _dword keyCode, const Vector2& vec2 );
-	typedef _void (*OnMouseMove)( const Vector2& vec2 );
-	typedef _void (*OnMouseUp)( const _dword keyCode, const Vector2& vec2 );
+	typedef _void (*OnMouseDown)( const _dword keyCode, const glm::vec2& vec2 );
+	typedef _void (*OnMouseMove)( const glm::vec2& vec2 );
+	typedef _void (*OnMouseUp)( const _dword keyCode, const glm::vec2& vec2 );
 
 	typedef _void (*OnLaunched)( );
 	typedef _void (*OnEnterBack)( );
@@ -62,9 +62,9 @@ public:
 	virtual _void FinishLaunched( );
 	virtual _void KeyDown( _dword keycode );
 	virtual _void KeyUp( const _dword keycode );
-	virtual _void MouseDown( const _dword keycode, const Vector2& vec2 );
-	virtual _void MouseMove( const Vector2& vec2 );
-	virtual _void MouseUp( const _dword keycode, const Vector2& vec2 );
+	virtual _void MouseDown( const _dword keycode, const glm::vec2& vec2 );
+	virtual _void MouseMove( const glm::vec2& vec2 );
+	virtual _void MouseUp( const _dword keycode, const glm::vec2& vec2 );
 	virtual _void EnterBack( );
 	virtual _void EnterFore( );
 

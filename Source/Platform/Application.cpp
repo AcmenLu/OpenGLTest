@@ -28,20 +28,20 @@ _void Application::KeyUp( const _dword keycode )
 		mKeyUpFunc( keycode );
 }
 
-_void Application::MouseDown( const _dword keycode, const Vector2& vec2 )
+_void Application::MouseDown( const _dword keycode, const glm::vec2& vec2 )
 {
 	mMouseState |= (_dword)Math::Pow( 2, keycode );
 	if ( mMouseDownFunc != _null )
 		mMouseDownFunc( keycode, vec2 );
 }
 
-_void Application::MouseMove( const Vector2& vec2 )
+_void Application::MouseMove( const glm::vec2& vec2 )
 {
 	if ( mMouseDownFunc != _null && mMouseState > 0 )
 		mMouseMoveFunc( vec2 );
 }
 
-_void Application::MouseUp( const _dword keycode, const Vector2& vec2 )
+_void Application::MouseUp( const _dword keycode, const glm::vec2& vec2 )
 {
 	mMouseState &= ~(_dword)Math::Pow( 2, keycode );
 	if ( mMouseUpFunc != _null )

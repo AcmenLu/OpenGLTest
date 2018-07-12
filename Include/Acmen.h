@@ -13,15 +13,20 @@
 #pragma comment( lib, "glew32s" )
 #pragma comment( lib, "opengl32" )
 
+// Math
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 // Common
 #include "Common/Typedef.h"
 #include "Common/Trace.h"
 #include "Common/Math.h"
 #include "Common/Timer.h"
-#include "Common/Vector2.h"
-#include "Common/Vector3.h"
-#include "Common/Vector4.h"
-#include "Common/Matrix4.h"
+//#include "Common/glm::vec2.h"
+//#include "Common/Vector3.h"
+//#include "Common/glm::vec4.h"
+//#include "Common/glm::mat4.h"
 #include "Common/Camera.h"
 #include "Common/Texture.h"
 #include "Common/String.h"

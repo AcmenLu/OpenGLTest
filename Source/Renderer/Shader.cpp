@@ -132,7 +132,7 @@ _void Shader::SetVector3( const string &name, _float x, _float y, _float z )
 		glUniform3f( location, x, y, z );
 }
 
-_void Shader::SetVector3( const string &name, Vector3 vec )
+_void Shader::SetVector3( const string &name, glm::vec3 vec )
 {
 	if ( mShaderProgram <= 0 )
 		return;

@@ -18,15 +18,15 @@ _void OnMouseCallBack( GLFWwindow* window, _long button, _long action, _long mod
 	_double posx, posy;
 	glfwGetCursorPos( window, &posx, &posy );
 	if ( action == GLFW_PRESS )
-		Application::GetInstance( )->MouseDown( button, Vector2( posx, posy ) );
+		Application::GetInstance( )->MouseDown( button, glm::vec2( posx, posy ) );
 	else if ( action == GLFW_RELEASE )
-		Application::GetInstance( )->MouseUp( button, Vector2( posx, posy ) );
+		Application::GetInstance( )->MouseUp( button, glm::vec2( posx, posy ) );
 }
 
 
 _void OncursorMove( GLFWwindow* window, _double x, _double y)
 {
-	Application::GetInstance( )->MouseMove( Vector2( x, y ) );
+	Application::GetInstance( )->MouseMove( glm::vec2( x, y ) );
 }
 
 Windows::Windows( )
