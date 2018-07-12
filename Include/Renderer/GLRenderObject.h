@@ -33,7 +33,7 @@ struct ShaderParms
 		:UseNormal( _false ), UseTexCoord( _false ), UseColor( _true ){ }
 };
 
-class GLRenderObject
+class GLRenderObject : public RenderObject
 {
 
 protected:

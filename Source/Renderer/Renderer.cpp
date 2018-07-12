@@ -35,5 +35,5 @@ _void Renderer::OnRender( _float elapse )
 	for ( RenderObject* object : mRenderList )
 		object->OnRender( elapse );
 
-	ClearRenderList( );
+	//ClearRenderList( );
 }
