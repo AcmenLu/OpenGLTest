@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Include\Common\camera.h" />
     <ClInclude Include="..\..\Include\Common\Math.h" />
     <ClInclude Include="..\..\Include\Common\stb_image.h" />
     <ClInclude Include="..\..\Include\Common\String.h" />
@@ -26,7 +27,6 @@
     <ClInclude Include="..\..\Include\Common\Timer.h" />
     <ClInclude Include="..\..\Include\Common\Trace.h" />
     <ClInclude Include="..\..\Include\Common\Typedef.h" />
-    <ClInclude Include="..\..\Source\Common\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Common\Math.cpp" />

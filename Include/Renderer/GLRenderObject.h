@@ -44,10 +44,11 @@ protected:
 	_dword					mVBO;
 	_dword					mEBO;
 	ShaderParms				mShaderParms;
+	glm::mat4				mTransform;
 
 public:
-	inline GLRenderObject( ) 
-		: mVertices( vector< Vertex >( ) ), mIndices( vector< _dword >( ) ), mShader( _null ), mVAO( 0 ), mVBO( 0 ), mEBO( 0 ), mShaderParms( ShaderParms( ) ){ }
+	inline GLRenderObject( )
+		: mVertices( vector< Vertex >( ) ), mIndices( vector< _dword >( ) ), mShader( _null ), mVAO( 0 ), mVBO( 0 ), mEBO( 0 ), mShaderParms( ShaderParms( ) ), mTransform( glm::mat4( ) ){ }
 	GLRenderObject( vector< Vertex > vertices, vector< _dword > indices );
 	~GLRenderObject( );
 
@@ -66,6 +67,11 @@ public:
 	virtual _void SetShader( Shader* shader )
 		{ mShader = shader; }
 
+	virtual glm::mat4& GetTransform( )
+		{ return mTransform; }
+	virtual _void SetTransform( glm::mat4& mat )
+		{ mTransform = mat; }
+
 	virtual _dword GetVAO( )
 		{ return mVAO; }
 	virtual _dword GetVBO( )
@@ -75,7 +81,7 @@ public:
 
 	virtual _void OnRender( _float elapse ) = 0;
 	virtual _bool CreateGeometry( );
-	virtual _bool CreateShader( );
+	virtual _bool CreateShader( ){ return _true; };
 	virtual _bool SetUniform( ){ return _true; }
 };
 

@@ -1,5 +1,8 @@
 #include "Acmen.h"
 
+#pragma comment( lib, "glfw3" )
+#pragma comment( lib, "opengl32" )
+
 _void OnKeyCallback( GLFWwindow* window, _long key, _long scancode, _long action, _long mode )
 {
 	if ( action == GLFW_PRESS )
@@ -110,12 +113,13 @@ _void Windows::initWindows( _float width, _float height )
 	glfwSetMouseButtonCallback( mGLFWWindow, OnMouseCallBack );
 	glfwSetCursorPosCallback( mGLFWWindow, OncursorMove );
 
-	if ( glewInit( ) != GLEW_OK )
+	if ( !gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress ) )
 	{
 		Trace::TraceString( "[WM] Initialize windows failed!" );
 		return;
 	}
 
+	GLint err = glGetError( );
 	ReSize( width, height );
 	Application::GetInstance( )->FinishLaunched( );
 }

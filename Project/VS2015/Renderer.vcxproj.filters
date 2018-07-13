@@ -26,6 +26,12 @@
     <ClCompile Include="..\..\Source\Renderer\RenderObject.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Renderer\glad.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Renderer\Sprite.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\Renderer\Renderer.h">
@@ -41,6 +47,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\Renderer\RenderObject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Renderer\Sprite.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

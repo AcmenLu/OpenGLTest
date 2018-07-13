@@ -25,6 +25,8 @@ _dword GLTexture::LoadGLTexture( Texture* texture )
 	if ( texture == _null && texture->mData != _null )
 		return 0;
 
+	GLint err = glGetError( );
+
 	if ( mGLId > 0 )
 		glDeleteTextures( 1, &mGLId );
 

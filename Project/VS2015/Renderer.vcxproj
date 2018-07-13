@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Renderer\glad.c" />
     <ClCompile Include="..\..\Source\Renderer\GLRenderObject.cpp" />
     <ClCompile Include="..\..\Source\Renderer\GLTexture.cpp" />
     <ClCompile Include="..\..\Source\Renderer\Renderer.cpp" />
     <ClCompile Include="..\..\Source\Renderer\RenderObject.cpp" />
     <ClCompile Include="..\..\Source\Renderer\Shader.cpp" />
+    <ClCompile Include="..\..\Source\Renderer\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\Renderer\GLRenderObject.h" />
@@ -31,6 +33,7 @@
     <ClInclude Include="..\..\Include\Renderer\Renderer.h" />
     <ClInclude Include="..\..\Include\Renderer\RenderObject.h" />
     <ClInclude Include="..\..\Include\Renderer\Shader.h" />
+    <ClInclude Include="..\..\Include\Renderer\Sprite.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0E51D48D-3801-4CDB-8EF7-010831DA3CE7}</ProjectGuid>

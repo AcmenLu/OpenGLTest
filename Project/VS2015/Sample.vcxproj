@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Sample\InitWinSample.cpp" />
+    <ClCompile Include="..\..\Source\Sample\OpenGlInit.cpp" />
     <ClCompile Include="..\..\Source\Sample\TextureSample.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

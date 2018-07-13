@@ -83,8 +83,3 @@ _bool GLRenderObject::CreateGeometry( )
 	glBindVertexArray( 0 );
 	return _true;
 }
-
-_bool GLRenderObject::CreateShader( )
-{
-	return _true;
-}
