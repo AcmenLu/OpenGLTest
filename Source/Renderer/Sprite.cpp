@@ -92,10 +92,8 @@ _void Sprite::OnRender( Renderer* renderer, _float elapse )
 	if ( mTexture->GetGLId( ) > 0 )
 	{
 		mShader->SetInt( "texture0", 0 );
-		//glm::mat4 view = renderer->mCamera->GetLookAtMat( );
 		mShader->SetMatrix4( "projection", renderer->mProjection2D, _false );
 		mShader->SetMatrix4( "model", mTransform, _false );
-		glm::vec4 v = renderer->mProjection2D * glm::vec4( 0.0f, 0.0f, 0.0f, 0.0f );
 		glActiveTexture( GL_TEXTURE0 );
 		glBindTexture( GL_TEXTURE_2D, mTexture->GetGLId( ) );
 	}

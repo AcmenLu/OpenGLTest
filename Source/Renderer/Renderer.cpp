@@ -25,7 +25,7 @@ _void Renderer::Resize( _dword width, _dword height )
 {
 	mSize = glm::vec2( width, height );
 	mProjection3D = glm::perspectiveRH( glm::radians( 45.0f ), (_float)width / (_float)height, 0.1f, 100.0f );
-	mProjection2D = glm::ortho(0.0f, (_float)width, 0.0f, (_float)height, 0.0f, 100.0f );
+	mProjection2D = glm::ortho(0.0f, (_float)width, (_float)height, 0.0f, 0.0f, 100.0f );
 }
 
 _void Renderer::AddToRenderList( RenderObject* object )

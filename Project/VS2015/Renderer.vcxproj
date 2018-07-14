@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\Source\Renderer\Renderer.cpp" />
     <ClCompile Include="..\..\Source\Renderer\RenderObject.cpp" />
     <ClCompile Include="..\..\Source\Renderer\Shader.cpp" />
+    <ClCompile Include="..\..\Source\Renderer\Shapes.cpp" />
     <ClCompile Include="..\..\Source\Renderer\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +34,7 @@
     <ClInclude Include="..\..\Include\Renderer\Renderer.h" />
     <ClInclude Include="..\..\Include\Renderer\RenderObject.h" />
     <ClInclude Include="..\..\Include\Renderer\Shader.h" />
+    <ClInclude Include="..\..\Include\Renderer\Shapes.h" />
     <ClInclude Include="..\..\Include\Renderer\Sprite.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

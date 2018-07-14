@@ -32,6 +32,9 @@
     <ClCompile Include="..\..\Source\Renderer\Sprite.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Renderer\Shapes.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\Renderer\Renderer.h">
@@ -50,6 +53,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\Renderer\Sprite.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\Renderer\Shapes.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
