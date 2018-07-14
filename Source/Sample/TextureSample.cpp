@@ -13,7 +13,7 @@ _void onKeyDown( _dword keycode )
 
 _void onLaunched()
 {
-	Sprite* spr = new Sprite( string( "resources/textures/window.png" ) );
+	Sprite* spr = new Sprite( string( "resources/textures/toy_box_diffuse.png" ) );
 	Renderer::GetInstance( )->AddToRenderList( spr );
 }
 

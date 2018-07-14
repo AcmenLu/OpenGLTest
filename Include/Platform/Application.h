@@ -12,6 +12,7 @@ public:
 	typedef _void (*OnMouseMove)( const glm::vec2& vec2 );
 	typedef _void (*OnMouseUp)( const _dword keyCode, const glm::vec2& vec2 );
 
+	typedef _void (*OnResize)( _dword width, _dword height );
 	typedef _void (*OnLaunched)( );
 	typedef _void (*OnEnterBack)( );
 	typedef _void (*OnEnterFore)( );
@@ -26,6 +27,7 @@ private:
 	OnMouseDown			mMouseDownFunc;
 	OnMouseMove			mMouseMoveFunc;
 	OnMouseUp			mMouseUpFunc;
+	OnResize			mOnResizeFunc;
 	OnLaunched			mLaunchedFunc;
 	OnEnterBack			mEnterBackFunc;
 	OnEnterFore			mEnterForeFunc;
@@ -52,6 +54,8 @@ public:
 		{ mMouseMoveFunc = funcptr; }
 	inline _void SetMouseUpCallback( OnMouseUp funcptr )
 		{ mMouseUpFunc = funcptr; }
+	inline _void SetResizeCallback( OnResize funcptr )
+		{ mOnResizeFunc = funcptr; }
 	inline _void SetLaunchedCallback( OnLaunched funcptr )
 		{ mLaunchedFunc = funcptr; }
 	inline _void SetEnterBackCallback( OnEnterBack funcptr )
@@ -59,12 +63,13 @@ public:
 	inline _void SetEnterForeCallback( OnEnterFore funcptr )
 		{ mEnterForeFunc = funcptr; }
 
-	virtual _void FinishLaunched( );
 	virtual _void KeyDown( _dword keycode );
 	virtual _void KeyUp( const _dword keycode );
 	virtual _void MouseDown( const _dword keycode, const glm::vec2& vec2 );
 	virtual _void MouseMove( const glm::vec2& vec2 );
 	virtual _void MouseUp( const _dword keycode, const glm::vec2& vec2 );
+	virtual _void Resize( _dword width, _dword height );
+	virtual _void FinishLaunched( );
 	virtual _void EnterBack( );
 	virtual _void EnterFore( );
 

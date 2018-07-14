@@ -19,6 +19,7 @@ Sprite::Sprite( glm::vec2 size )
 	mShaderParms.UseColor = _false;
 	mShaderParms.UseTexCoord = _true;
 	CreateGeometry( );
+	CreateShader( );
 }
 
 Sprite::Sprite( string& filename )
@@ -28,6 +29,11 @@ Sprite::Sprite( string& filename )
 	mVertices.push_back( Vertex( glm::vec3( mTexture->GetWidth( ), 0.0f, 0.0f ), glm::vec3( ), glm::vec2( 1.0f, 0.0f ), glm::vec4( ) ) );
 	mVertices.push_back( Vertex( glm::vec3( mTexture->GetWidth( ), mTexture->GetHeight( ), 0.0f ), glm::vec3( ), glm::vec2( 1.0f, 1.0f ), glm::vec4( ) ) );
 	mVertices.push_back( Vertex( glm::vec3( 0.0f, mTexture->GetHeight( ), 0.0f ), glm::vec3( ), glm::vec2( 0.0f, 1.0f ), glm::vec4( ) ) );
+
+	//mVertices.push_back( Vertex( glm::vec3(0.5f,  0.5f, 0.0f ), glm::vec3( ), glm::vec2( 1.0f, 1.0f ), glm::vec4( ) ) );
+	//mVertices.push_back( Vertex( glm::vec3(0.5f, -0.5f, 0.0f ), glm::vec3( ), glm::vec2( 1.0f, 0.0f ), glm::vec4( ) ) );
+	//mVertices.push_back( Vertex( glm::vec3(-0.5f, -0.5f, 0.0f ), glm::vec3( ), glm::vec2( 0.0f, 0.0f ), glm::vec4( ) ) );
+	//mVertices.push_back( Vertex( glm::vec3(-0.5f,  0.5f, 0.0f ), glm::vec3( ), glm::vec2( 0.0f, 1.0f ), glm::vec4( ) ) );
 
 	mIndices.push_back( 0 );
 	mIndices.push_back( 1 );
@@ -40,6 +46,7 @@ Sprite::Sprite( string& filename )
 	mShaderParms.UseColor = _false;
 	mShaderParms.UseTexCoord = _true;
 	CreateGeometry( );
+	CreateShader( );
 }
 
 Sprite::~Sprite( )
@@ -51,10 +58,10 @@ _bool Sprite::CreateShader( )
 {
 	string vsstr = "#version 330 core\n" \
 		"layout (location = 0) in vec3 position;\n" \
-		"layout (location = 2) in vec2 texcoord;\n" \
-		"out vec2 TexCoord;\n" \
-		"uniform mat4 model;\n" \
+		"layout (location = 1) in vec2 texcoord;\n" \
 		"uniform mat4 projection;\n" \
+		"uniform mat4 model;\n" \
+		"out vec2 TexCoord;\n" \
 		"void main()\n" \
 		"{\n" \
 		"TexCoord = texcoord;\n" \
@@ -62,33 +69,33 @@ _bool Sprite::CreateShader( )
 		"}";
 
 	string psstr = "#version 330 core\n" \
+		"in vec2 TexCoord;" \
 		"out vec4 FragColor;\n" \
-		"in vec2 TexCoord;\n" \
 		"uniform sampler2D texture0;\n" \
 		"void main()\n" \
 		"{\n" \
-		"vec4 texColor = texture(texture0, TexCoord);\n" \
-		"FragColor = texColor;\n" \
+		"FragColor = texture(texture0, TexCoord);\n" \
 		"}\n";
 	mShader = new Shader( vsstr, psstr );
 	return _true;
 }
 
-_void Sprite::OnRender( _float elapse )
+_void Sprite::OnRender( Renderer* renderer, _float elapse )
 {
 	if ( mShader == _null )
 		return;
 
 	mShader->Use( );
-	SetUniform( );
+	//SetUniform( );
 	glBindVertexArray( mVAO );
+	GLuint err = glGetError( );
 	if ( mTexture->GetGLId( ) > 0 )
 	{
 		mShader->SetInt( "texture0", 0 );
-		glm::o
-		mShader->SetMatrix4( "projection", , _false );
-		mShader->SetMatrix4( "model", , _false );
-
+		//glm::mat4 view = renderer->mCamera->GetLookAtMat( );
+		mShader->SetMatrix4( "projection", renderer->mProjection2D, _false );
+		mShader->SetMatrix4( "model", mTransform, _false );
+		glm::vec4 v = renderer->mProjection2D * glm::vec4( 0.0f, 0.0f, 0.0f, 0.0f );
 		glActiveTexture( GL_TEXTURE0 );
 		glBindTexture( GL_TEXTURE_2D, mTexture->GetGLId( ) );
 	}

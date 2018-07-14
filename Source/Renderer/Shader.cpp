@@ -6,7 +6,7 @@ Shader::Shader( const string& vertexstr, const string& fragmentstr )
 	if ( CompileShader( vertexstr, ShaderType::SHADERTYPE_VERTEX ) == _false )
 		return;
 
-	if ( CompileShader( vertexstr, ShaderType::SHADERTYPE_FRAGMENT ) == _false )
+	if ( CompileShader( fragmentstr, ShaderType::SHADERTYPE_FRAGMENT ) == _false )
 		return;
 
 	LinkProgrma( );
@@ -31,7 +31,7 @@ Shader::~Shader( )
 
 _bool Shader::CompileShader( const string& shaderstr, ShaderType shadertype )
 {
-	if ( shaderstr.empty( ) == _false )
+	if ( shaderstr.empty( ) == _true )
 		return _false;
 
 	const _char* shadercode = shaderstr.c_str( );
@@ -53,7 +53,7 @@ _bool Shader::CompileShader( const string& shaderstr, ShaderType shadertype )
 
 	glShaderSource( shader, 1, &shadercode, NULL );
 	glCompileShader( shader );
-	glGetShaderiv( mFragment, GL_COMPILE_STATUS, &success );
+	glGetShaderiv( shader, GL_COMPILE_STATUS, &success );
 	if ( !success )
 	{
 		glGetShaderInfoLog( shader, 512, NULL, infoLog );
@@ -132,7 +132,7 @@ _void Shader::SetVector3( const string &name, _float x, _float y, _float z )
 		glUniform3f( location, x, y, z );
 }
 
-_void Shader::SetVector3( const string &name, glm::vec3 vec )
+_void Shader::SetVector3( const string &name, glm::vec3& vec )
 {
 	if ( mShaderProgram <= 0 )
 		return;
@@ -142,12 +142,12 @@ _void Shader::SetVector3( const string &name, glm::vec3 vec )
 		glUniform3f( location, vec.x, vec.y, vec.z );
 }
 
-_void Shader::SetMatrix4( const string &name, _float* value, _bool transpose )
+_void Shader::SetMatrix4( const string &name, glm::mat4& value, _bool transpose )
 {
 	if ( mShaderProgram <= 0 )
 		return;
 
 	_long location = glGetUniformLocation( mShaderProgram, name.c_str( ) );
 	if ( location >= 0 )
-		glUniformMatrix4fv( location, 1, transpose, value );
+		glUniformMatrix4fv( location, 1, transpose, &value[0][0] );
 }

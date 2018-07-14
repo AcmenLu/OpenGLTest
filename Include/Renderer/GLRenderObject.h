@@ -79,7 +79,7 @@ public:
 	virtual _dword GetEBO( )
 		{ return mEBO; }
 
-	virtual _void OnRender( _float elapse ) = 0;
+	virtual _void OnRender( Renderer* renderer, _float elapse ) = 0;
 	virtual _bool CreateGeometry( );
 	virtual _bool CreateShader( ){ return _true; };
 	virtual _bool SetUniform( ){ return _true; }

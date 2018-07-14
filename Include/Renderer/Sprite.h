@@ -13,6 +13,6 @@ public:
 	~Sprite( );
 
 	_bool CreateShader( );
-	_void OnRender( _float elapse );
+	_void OnRender( Renderer* renderer, _float elapse );
 };
 }

@@ -24,7 +24,7 @@ public:
 	inline glm::vec3 Front( )
 		{ return glm::normalize( mTarget - mPosition ); }
 
-	inline glm::mat4 GetMatrix3D( )
+	inline glm::mat4 GetLookAtMat( )
 		{ return glm::lookAtRH( mPosition, mTarget, mUp ); }
 
 	inline void SetPostition( glm::vec3 position )

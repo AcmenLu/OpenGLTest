@@ -14,6 +14,7 @@ _void OnKeyCallback( GLFWwindow* window, _long key, _long scancode, _long action
 _void OnReSize( GLFWwindow* window, _long width, _long height )
 {
 	glViewport( 0, 0, width, height );
+	Application::GetInstance( )->Resize( width, height );
 }
 
 _void OnMouseCallBack( GLFWwindow* window, _long button, _long action, _long modify )

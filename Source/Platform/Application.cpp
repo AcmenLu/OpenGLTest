@@ -10,6 +10,13 @@ Application* Application::GetInstance( )
 	return sApplication;
 }
 
+_void Application::Resize( _dword width, _dword height )
+{
+	Renderer::GetInstance( )->Resize( width, height );
+	if ( mOnResizeFunc != _null )
+		mOnResizeFunc( width, height );
+}
+
 _void Application::FinishLaunched( )
 {
 	if ( mLaunchedFunc != _null )

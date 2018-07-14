@@ -24,12 +24,12 @@ public:
 	_bool CompileShader( const string& shaderstr, ShaderType shadertype );
 	_bool LinkProgrma( );
 	_void Use( );
-	_void SetBool( const string &name, _bool value );
-	_void SetInt( const string &name, _long value );
-	_void SetFloat( const string &name, _float value );
-	_void SetVector3( const string &name, _float x, _float y, _float z );
-	_void SetVector3( const string &name, glm::vec3 vec );
-	_void SetMatrix4( const string &name, _float* value, _bool transpose = _false );
+	_void SetBool( const string& name, _bool value );
+	_void SetInt( const string& name, _long value );
+	_void SetFloat( const string& name, _float value );
+	_void SetVector3( const string& name, _float x, _float y, _float z );
+	_void SetVector3( const string& name, glm::vec3& vec );
+	_void SetMatrix4( const string& name, glm::mat4& value, _bool transpose = _false );
 };
 
 }

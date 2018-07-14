@@ -65,7 +65,7 @@ _bool GLRenderObject::CreateGeometry( )
 	}
 
 	// Texcoord
-	if ( mShaderParms.UseNormal )
+	if ( mShaderParms.UseTexCoord )
 	{
 		glVertexAttribPointer( location, 2, GL_FLOAT, GL_FALSE, sizeof( Vertex ), (_void*)offsetof( Vertex, TexCoord ) );
 		glEnableVertexAttribArray( location );
